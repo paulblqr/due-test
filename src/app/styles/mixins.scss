@@ -1,0 +1,32 @@
+@import "./theme.scss";
+
+@mixin flex-center-both {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-vertical {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center-horizontal {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin align-center {
+  margin: 0 auto;
+}

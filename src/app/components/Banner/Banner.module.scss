@@ -1,0 +1,12 @@
+@import "@/app/styles/theme.scss";
+@import "@/app/styles/mixins.scss";
+
+.Container {
+  width: 100%;
+  padding: 24px;
+  @include flex-center-both;
+  background-color: $darkblue;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
