@@ -1,0 +1,95 @@
+@import "@/app/styles/mixins.scss";
+@import "@/app/styles/theme.scss";
+
+.Card {
+  @include flex-column;
+  @include flex-space-between;
+  padding: 16px;
+  background-color: white;
+  box-shadow: $shadow;
+  width: 260px;
+  height: 140px;
+  padding: 24px;
+  border-radius: $radius;
+  margin: 8px;
+  opacity: 0;
+  animation: appear 0.4s cubic-bezier(0.57, 0.21, 0.69, 1.25) forwards;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  border: 1px solid transparent;
+}
+
+.Selected {
+  border: 1px solid $blue;
+}
+
+.Container {
+  width: 100%;
+  @include flex-space-between;
+
+  :nth-first-child {
+    margin-bottom: 10px;
+  }
+}
+
+.Name {
+  @include flex-center-horizontal;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 140px;
+  display: block;
+  overflow: hidden;
+}
+
+.Top {
+  @include flex-center-horizontal;
+}
+
+.Icon {
+  @include flex-center-both;
+  margin-left: 8px;
+
+  svg {
+    fill: $lightgrey;
+    width: 21px;
+    height: 21px;
+  }
+}
+
+.Value {
+  font-size: 32px;
+  color: $darkgrey;
+  font-weight: 600;
+  letter-spacing: -0.33px;
+}
+
+.Trend {
+  @include flex-center-both;
+  margin-left: 8px;
+
+  svg {
+    width: 125px;
+    height: 40px;
+  }
+}
+
+//todo: have fun here
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    //transform: translate3d(12px, -50%, 3em) scale(0.8);
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    //transform: translate3d(0px, 0px, 0px) scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}

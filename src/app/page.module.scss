@@ -1,0 +1,50 @@
+@import "@/app/styles/mixins.scss";
+@import "@/app/styles/theme.scss";
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $bglight;
+}
+
+.KPIs {
+  padding: 64px 24px;
+  width: 100%;
+  @include flex-center-both;
+  background-color: $bglight;
+
+  .Wrapper {
+    width: 80%;
+    flex-wrap: wrap;
+    @include flex-center-both;
+    @include align-center;
+  }
+
+  min-height: 200px;
+}
+
+.AddKPI {
+  width: 260px;
+  height: 140px;
+  @include flex-center-both;
+  border: 1px dashed $lightgrey;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: all 0.4s $cubic;
+  margin: 8px;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.SVG {
+  width: 16px;
+  height: 16px;
+}
+
+.FormContainer {
+  width: 100%;
+  background-color: white;
+}

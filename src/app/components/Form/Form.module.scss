@@ -1,0 +1,86 @@
+@import "@/app/styles/mixins.scss";
+@import "@/app/styles/theme.scss";
+
+.Container {
+  width: 100%;
+  padding: 32px 48px;
+  @include flex-column;
+  margin-bottom: 40px;
+}
+
+.Title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.Field {
+  margin: 12px 0px;
+  @include flex-column;
+}
+
+.SubName {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.Input {
+  outline: none;
+  width: 100%;
+  padding: 8px 14px;
+  border-radius: $radius;
+  border: 1px solid $lightgrey;
+  font-size: 14px;
+  transition: all 0.2s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+
+  &::placeholder {
+    color: $grey;
+  }
+}
+
+.Textarea {
+  resize: none;
+  outline: none;
+  width: 100%;
+  padding: 8px 14px;
+  border: 1px solid $lightgrey;
+  font-size: 14px;
+  transition: all 0.2s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  border-radius: $radius;
+  font-family: inherit;
+
+  &::placeholder {
+    color: $grey;
+  }
+}
+
+.Icons {
+  width: 100%;
+  @include flex-center-horizontal;
+  flex-wrap: wrap;
+}
+
+.Button {
+  @include flex-center-both;
+  align-self: flex-end;
+  background-color: $blue;
+  margin-top: 32px;
+  font-size: 14px;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+
+  &:hover {
+    background-color: darken($blue, 5%);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    fill: white;
+  }
+}

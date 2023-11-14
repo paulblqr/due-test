@@ -1,0 +1,56 @@
+@import "@/app/styles/mixins.scss";
+
+.Container {
+  width: 100%;
+  @include flex-center-horizontal;
+  position: relative;
+}
+
+.Selected {
+  width: 100%;
+  padding: 8px 14px;
+  border: 1px solid $lightgrey;
+  font-size: 14px;
+  border-radius: $radius;
+  cursor: pointer;
+}
+
+.Placeholder {
+  width: 100%;
+  padding: 8px 14px;
+  border: 1px solid $lightgrey;
+  font-size: 14px;
+  border-radius: $radius;
+  cursor: pointer;
+  color: $grey;
+}
+
+.Dropdown {
+  @include flex-column;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  bottom: -10px;
+  transform: translateY(100%);
+  border-radius: $radius;
+  padding: 4px;
+  box-shadow: 0px 5px 15px 0px rgba(27, 52, 72, 0.1);
+}
+
+.Item {
+  @include flex-center-horizontal;
+  transition: all 0.2s ease-out;
+  padding: 8px 14px;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: $bglight;
+  }
+}
+
+.Hidden {
+  display: none;
+}

@@ -1,0 +1,36 @@
+@import "@/app/styles/mixins.scss";
+@import "@/app/styles/theme.scss";
+
+.Container {
+  @include flex-center-both;
+  transition: all 0.4s $cubic;
+  border: 1px solid $lightgrey;
+  margin-right: 8px;
+  margin-top: 8px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: $radius;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    transition: all 0.4s $cubic;
+    fill: $grey;
+  }
+
+  &:hover {
+    border: 1px solid $grey;
+    transform: scale(1.05);
+  }
+}
+
+.Selected {
+  border: 1px solid $blue;
+  svg {
+    fill: $blue;
+  }
+
+  &:hover {
+    border: 1px solid $blue;
+  }
+}

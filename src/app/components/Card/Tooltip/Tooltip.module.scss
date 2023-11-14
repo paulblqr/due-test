@@ -1,0 +1,50 @@
+@import "@/app/styles/mixins.scss";
+@import "@/app/styles/theme.scss";
+
+.Container {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  span {
+    padding: 4px;
+  }
+}
+
+.Tooltip {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  font-size: 14px;
+  padding: 6px 8px;
+  border-radius: $radius;
+  opacity: 0;
+  background-color: $darkblue;
+  color: white;
+  animation: pop 0.2s ease-out forwards;
+  white-space: nowrap;
+}
+
+.SVG {
+  width: 16px;
+  height: 16px;
+  fill: $grey;
+  transform: translateY(2px);
+}
+
+.Hidden {
+  display: none;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: translate(3px, -3px) scale(0.5);
+  }
+  70% {
+    transform: translate(3px, -3px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(3px, -3px) scale(1);
+  }
+}
