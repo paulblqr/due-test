@@ -40,6 +40,15 @@ export default function Home() {
     },
     [kpiList]
   );
+
+  const handleDelete = useCallback(
+    (id) => {
+      const newKpiList = kpiList.filter((item) => item.id !== id);
+      setKpiList(newKpiList);
+      if (id === selectedKpi?.id) setSelectedKpi(null);
+    },
+    [kpiList, selectedKpi]
+  );
   return (
     <div className={style.main}>
       <Banner />
@@ -51,6 +60,7 @@ export default function Home() {
               kpi={kpi}
               onClick={handleFillForm}
               selectedKpiId={selectedKpi?.id}
+              onDelete={handleDelete}
             />
           ))}
           <div className={style.AddKPI} onClick={handleCreateKpi}>
@@ -60,7 +70,11 @@ export default function Home() {
       </div>
       <div className={style.FormContainer}>
         {selectedKpi && (
-          <Form selectedKpi={selectedKpi} onSubmit={handleSubmit} />
+          <Form
+            selectedKpi={selectedKpi}
+            onSubmit={handleSubmit}
+            onDelete={handleDelete}
+          />
         )}
       </div>
     </div>

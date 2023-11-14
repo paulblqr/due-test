@@ -61,9 +61,13 @@
   flex-wrap: wrap;
 }
 
+.Buttons {
+  @include flex-center-horizontal;
+  align-self: flex-end;
+}
 .Button {
   @include flex-center-both;
-  align-self: flex-end;
+
   background-color: $blue;
   margin-top: 32px;
   font-size: 14px;
@@ -82,5 +86,29 @@
     height: 18px;
     margin-right: 8px;
     fill: white;
+  }
+}
+
+.DeleteButton {
+  border: 1.5px solid $red;
+  color: $red;
+  font-weight: 500;
+  background-color: white;
+  margin-right: 12px;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background-color: $red;
+    color: white;
+    animation: fear 50ms ease-out infinite alternate;
+  }
+}
+
+@keyframes fear {
+  0% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(1px);
   }
 }

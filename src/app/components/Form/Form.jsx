@@ -4,7 +4,7 @@ import { icons, trends } from "../../helpers/constants";
 import RefreshIcon from "@/app/icons/refresh";
 import Icon from "./Icon";
 import Select from "./Select";
-export default function Form({ selectedKpi, onSubmit }) {
+export default function Form({ selectedKpi, onSubmit, onDelete }) {
   const [data, setData] = useState(selectedKpi);
 
   const onChange = useCallback(
@@ -86,8 +86,16 @@ export default function Form({ selectedKpi, onSubmit }) {
         <div className={style.SubName}>Trend</div>
         <Select onChangeSelect={onChangeSelect} data={data} />
       </div>
-      <div className={style.Button} onClick={() => onSubmit(data)}>
-        <RefreshIcon /> Update KPI
+      <div className={style.Buttons}>
+        <div
+          className={`${style.Button} ${style.DeleteButton}`}
+          onClick={() => onDelete(selectedKpi?.id)}
+        >
+          Delete KPI
+        </div>
+        <div className={style.Button} onClick={() => onSubmit(data)}>
+          <RefreshIcon /> Update KPI
+        </div>
       </div>
     </div>
   );

@@ -9,7 +9,6 @@ function Icon({ className }) {
       viewBox="0 0 18 19"
     >
       <path
-        stroke="#71899C"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
