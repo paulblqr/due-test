@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import style from "./Select.module.scss";
+import Arrow from "@/app/icons/arrow";
 import { trends } from "@/app/helpers/constants";
 export default function Select({ data, onChangeSelect }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +41,7 @@ export default function Select({ data, onChangeSelect }) {
           ))}
         </div>
       )}
+      <Arrow className={isOpen ? style.ArrowUp : style.ArrowDown} />
     </div>
   );
 }
